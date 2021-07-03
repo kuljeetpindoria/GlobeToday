@@ -48,13 +48,14 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.Vi
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                categorClickInterface.onCategoryClick(position);
             }
         });
     }
 
     @Override
     public int getItemCount() {
+
         return categoryRVModal.size();
     }
 
