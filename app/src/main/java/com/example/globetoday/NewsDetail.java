@@ -45,9 +45,12 @@ public class NewsDetail extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                startActivity(intent);
+                gotoUrl(url);
+            }
+
+            private void gotoUrl(String url) {
+                Uri uri = Uri.parse(url);
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
             }
         });
 
